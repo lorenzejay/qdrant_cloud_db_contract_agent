@@ -22,6 +22,3 @@ build-backend = "hatchling.build"
 
 [tool.crewai]
 type = "crew"
-
-[tool.uv.sources]
-crewai = { path = "/Users/lorenzejay/Documents/Uplift Digital Solutions/clients/crewai-org/crewAI/", editable = true }
