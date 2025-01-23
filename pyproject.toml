@@ -1,0 +1,27 @@
+[project]
+name = "qdrant_cloud_db_agent_rag"
+version = "0.1.0"
+description = "qdrant_cloud_db_agent_rag using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.98.0,<1.0.0",
+    "qdrant-client[fastembed]>=1.13.2",
+]
+
+[project.scripts]
+qdrant_cloud_db_agent_rag = "qdrant_cloud_db_agent_rag.main:run"
+run_crew = "qdrant_cloud_db_agent_rag.main:run"
+train = "qdrant_cloud_db_agent_rag.main:train"
+replay = "qdrant_cloud_db_agent_rag.main:replay"
+test = "qdrant_cloud_db_agent_rag.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
+
+[tool.uv.sources]
+crewai = { path = "/Users/lorenzejay/Documents/Uplift Digital Solutions/clients/crewai-org/crewAI/", editable = true }

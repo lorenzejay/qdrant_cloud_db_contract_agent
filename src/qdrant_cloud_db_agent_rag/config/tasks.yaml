@@ -1,0 +1,22 @@
+rag_task:
+  description: >
+    You have access to a vector database of contracts and you can answer questions about the contracts.
+    Find the most relevant information and present it in a clear and concise manner for the given question.
+    The question is: {question}
+    You are allowed to include filters like filter_by and filter_value which refers to the key and value you want to match by.
+    Only filter if necessary.
+  expected_output: >
+    The most relevant information about the question: {question}
+    The output should not contain information that was not retrieved from the vector database.
+  agent: rag_agent
+
+reporter_task:
+  description: >
+    Review the context you got and ensure it is relevant to the question.
+    The question is: {question}
+    Make sure the report is detailed and contains any and all relevant information.
+    Your job is to answer the question and provide the source of the information such as the contract name, clause / section number, etc.
+  expected_output: >
+    A fully fledged answer to the question.
+    Sources should be included in the report.
+  agent: reporter
