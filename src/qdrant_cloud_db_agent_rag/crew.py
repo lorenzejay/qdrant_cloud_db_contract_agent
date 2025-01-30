@@ -48,16 +48,11 @@ class QdrantCloudDbAgentRag:
             config=self.tasks_config["rag_task"],
         )
 
-    class Report_output(BaseModel):
-        answer: str
-        source: str
-
     @task
     def reporter_task(self) -> Task:
         return Task(
             config=self.tasks_config["reporter_task"],
             output_file="report.md",
-            output_pydantic=self.Report_output,
         )
 
     @crew
